@@ -1,0 +1,16 @@
+/* All Equipment from all mfrs with a model */
+/* mfr + type + model */
+
+SELECT m.mfrID, m.mfrName, t.equipName, mo.equipModelName, mo.equipModelDesc, mo.equipModelID
+FROM mfr m
+    LEFT JOIN equipModels mo ON m.mfrID = mo.mfrID
+    LEFT JOIN equipTypes t ON t.equipTypeID = mo.equipTypeID
+/*
+    LEFT JOIN marchingShow s ON c.showID = s.showID
+    LEFT JOIN marchingOrgs o on s.orgID = o.orgID
+    
+WHERE s.showYear = 2018
+    LIMIT 0, 25
+*/    
+    
+/* end */
